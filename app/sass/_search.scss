@@ -1,0 +1,44 @@
+.SearchPage {
+  &-header {
+    justify-content: center;
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #000;
+    color: #bbb;
+    &-searchTerm {
+      max-width: $siteWidth;
+      margin: 0 auto;
+      display: flex;
+      padding: 1rem 0;
+      color: #bbb;
+    }
+  }
+
+  &-body {
+    max-width: $siteWidth;
+    margin: 0 auto;
+    &-title {
+      display: flex;
+      font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+  }
+
+  .Item {
+    &-description {
+      flex-direction: column-reverse;
+      &-image {
+        flex-grow: 1;
+        flex-basis: 0;
+        align-items: center;
+        padding: 2rem !important;
+        display: flex;
+        justify-content: center;
+        img {
+          max-width: 100% !important;
+          max-height: 300px;
+        }
+      }
+    }
+  }
+}

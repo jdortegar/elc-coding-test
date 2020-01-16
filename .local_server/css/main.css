@@ -1,6 +1,7 @@
 /** This is the main stylesheet for the sass compiler, all imports should stem from this initial page. It contains the universal styles of the site, the imports and various other items. */
 /** The menu is technically the header of the site, it contains the styles for the drop down of the Search Bar. */
-header.menu { width: 100%; position: relative; z-index: 10; }
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+header.menu { width: 100%; position: relative; z-index: 10; font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
 
 header.menu div.menu-container { width: 100%; background-color: black; padding: 0 20px; text-align: left; }
 
@@ -14,20 +15,74 @@ header.menu div.menu-container nav i { color: white; font-size: 30px; line-heigh
 
 header.menu div.menu-container nav i.search { position: absolute; right: 10px; top: 0; }
 
-header.menu div.menu-container nav a.nav-item { font-family: Helvetica, Arial, Sans-Serif; font-size: 17px; line-height: 70px; text-transform: uppercase; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; color: #FFF; margin-right: 20px; }
+header.menu div.menu-container nav a.nav-item { font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; font-size: 17px; line-height: 70px; text-transform: uppercase; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; color: #fff; margin-right: 20px; }
 
-header.menu div.search-container { position: absolute; background-color: white; z-index: 20; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%; padding: 5px; background-color: white; border-bottom: 1px solid #CCC; display: none; }
+header.menu .Menu-inputWrapper, header.menu .Menu-resultWrapper { position: relative; max-width: 1280px; margin: 0 auto; }
+
+header.menu div.search-container { position: absolute; background-color: white; z-index: 20; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%; padding: 0.625rem 1.875rem; background-color: white; border-bottom: 1px solid #ccc; display: none; }
 
 header.menu div.search-container.showing { display: block; }
 
-header.menu div.search-container input[type='text'] { min-width: 100%; font-size: 36px; line-height: 50px; border: 1px solid #CCC; padding: 0 10px; }
+header.menu div.search-container input[type='text'] { min-width: 100%; font-size: 36px; line-height: 50px; border: none; padding: 0; font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
 
-header.menu div.search-container i.close { position: absolute; right: 10px; top: 5px; font-size: 36px; line-height: 50px; }
+header.menu div.search-container input[type='text']:focus { border: none; outline-color: transparent; }
+
+header.menu div.search-container input[type='text']::-webkit-input-placeholder { font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
+
+header.menu div.search-container input[type='text']:-ms-input-placeholder { font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
+
+header.menu div.search-container input[type='text']:-moz-placeholder { font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
+
+header.menu div.search-container input[type='text']::-moz-placeholder { font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
+
+header.menu div.search-container i.close { position: absolute; right: 0.625rem; font-size: 2.25rem; line-height: 50px; color: #000; }
 
 /** This is the central home page */
 section#home { position: absolute; width: 100%; height: 100%; top: 0; left: 0; padding: 100px 20px 0; background-image: url("/img/header.jpg"); background-size: cover; background-repeat: no-repeat; }
 
 section#home div.content { max-width: 1280px; margin: 0 auto; color: #FFF; }
+
+.SearchPage-header { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; border-bottom: 1px solid #000; color: #bbb; }
+
+.SearchPage-header-searchTerm { max-width: 1280px; margin: 0 auto; display: -webkit-box; display: -ms-flexbox; display: flex; padding: 1rem 0; color: #bbb; }
+
+.SearchPage-body { max-width: 1280px; margin: 0 auto; }
+
+.SearchPage-body-title { display: -webkit-box; display: -ms-flexbox; display: flex; font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; padding: 1rem 0; }
+
+.SearchPage .Item-description { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+
+.SearchPage .Item-description-image { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; -ms-flex-preferred-size: 0; flex-basis: 0; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 2rem !important; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.SearchPage .Item-description-image img { max-width: 100% !important; max-height: 300px; }
+
+.ItemsResult { font-family: Helvetica, Arial, Sans-Serif; }
+
+.ItemsResult-header { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; padding: 1.25rem 0; font-size: 0.75rem; }
+
+.ItemsResult-header .ItemsResult-link a { cursor: pointer; color: #000; }
+
+.ItemsResult-header .ItemsResult-link a:hover { color: #000; }
+
+.itemsList { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; margin: 0; padding: 0; width: 100%; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.itemsList .Item { padding: 2%; width: 25%; }
+
+.itemsList .Item-description { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.itemsList .Item-description-image { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; -ms-flex-preferred-size: 0; flex-basis: 0; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 0 2rem; display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.itemsList .Item-description-image img { max-width: 5rem; }
+
+.itemsList .Item-description-text { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; -ms-flex-preferred-size: 0; flex-basis: 0; }
+
+.itemsList .Item-description-text h3 { font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
+
+.itemsList .Item-description-text p { max-height: 110px; overflow: hidden; text-overflow: ellipsis; }
+
+.itemsList .Item-details { border-top: 1px solid #000; padding: 1rem 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; font-family: 'Bebas Neue', Arial, Helvetica, sans-serif; }
+
+.itemsList .Item-details-button { background: #000; color: #fff; padding: 0.3125rem 2rem; }
 
 html, html * { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0; margin: 0; }
 
@@ -37,7 +92,7 @@ main { width: 100%; height: 100%; display: block; position: relative; }
 
 main * { -webkit-font-smoothing: antialiased; }
 
-main a { -webkit-transition: opacity .5s; transition: opacity .5s; }
+main a { -webkit-transition: opacity 0.5s; transition: opacity 0.5s; }
 
 main a:hover { opacity: 0.7; }
 
